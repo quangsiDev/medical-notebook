@@ -1,0 +1,16 @@
+.ant-layout-sider,
+.ant-menu.ant-menu-dark {
+  background: rgb(18, 24, 40) !important;
+  font-weight: bold;
+}
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: rgb(16, 185, 129) !important;
+}
+.ant-menu.ant-menu-dark .ant-menu-item-selected .ant-menu-title-content {
+  /* background: rgba(255, 255, 255, 0.08) !important; */
+  color: rgb(16, 185, 129) !important;
+}
+.selected_menu {
+  color: rgb(16, 185, 129) !important;
+}
