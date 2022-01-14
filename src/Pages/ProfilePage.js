@@ -23,25 +23,28 @@ export default function ProfilePage() {
   const dispatch = useDispatch();
   const userInfor = useSelector((state) => state.userReducer.userInfor);
   const [form] = Form.useForm();
+
+  useEffect(() => {
+    dispatch(getUserInforAction());
+  }, []);
+
   const onGenderChange = (value) => {
-    switch (value) {
-      case "male":
-        form.setFieldsValue({
-          note: "Hi, man!",
-        });
-        return;
-
-      case "female":
-        form.setFieldsValue({
-          note: "Hi, lady!",
-        });
-        return;
-
-      case "other":
-        form.setFieldsValue({
-          note: "Hi there!",
-        });
-    }
+    // switch (value) {
+    //   case "male":
+    //     form.setFieldsValue({
+    //       note: "Hi, man!",
+    //     });
+    //     return;
+    //   case "female":
+    //     form.setFieldsValue({
+    //       note: "Hi, lady!",
+    //     });
+    //     return;
+    //   case "other":
+    //     form.setFieldsValue({
+    //       note: "Hi there!",
+    //     });
+    // }
   };
   const updateUser = async (data) => {
     console.log(data);
@@ -76,6 +79,10 @@ export default function ProfilePage() {
       name: userInfor?.name,
       account: userInfor?.account,
       address: userInfor?.address,
+      email: userInfor?.email,
+      phone: userInfor?.phone,
+      height: userInfor?.height,
+      weight: userInfor?.weight,
     });
   }, []);
   return (
@@ -214,12 +221,6 @@ export default function ProfilePage() {
           >
             Lưu
           </Button>
-          {/* <Button htmlType="button" onClick={onReset}>
-                        Reset
-                    </Button> */}
-          {/* <Button type="link" htmlType="button" onClick={onFill}>
-                        Fill form
-                    </Button> */}
         </Form.Item>
       </Form>
     </div>

@@ -102,6 +102,19 @@
 import React, { useEffect, useRef } from "react";
 import f3 from "family-chart"; // npm i family-chart
 import "../css/family-chart.css";
+import ItemUser from "../components/Parrents/ItemUser";
+import ItemFather from "../components/Parrents/ItemFather";
+import ItemMother from "../components/Parrents/ItemMother";
 export default function FamilyPage() {
-  return <div className="f3" id="FamilyChart"></div>;
+  return (
+    <div className="space-y-20 container p-10" id="FamilyChart">
+      <div className="flex justify-center">
+        <ItemUser />
+      </div>
+      <div className="flex justify-between">
+        <ItemFather />
+        <ItemMother />
+      </div>
+    </div>
+  );
 }

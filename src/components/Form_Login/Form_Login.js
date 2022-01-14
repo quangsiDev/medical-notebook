@@ -57,6 +57,9 @@ export default function Form_Login() {
             Mật khẩu
           </label>
         </div>
+        <span className="text-blue-theme underline mb-3 inline-block">
+          Quên mật khẩu ?
+        </span>
         <div className="flex items-center justify-between">
           <button
             onClick={handleLogin}

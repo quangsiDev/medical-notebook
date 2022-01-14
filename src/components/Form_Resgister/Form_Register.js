@@ -1,8 +1,22 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { postAPI } from "../../services/axiosCofig";
-
+import {
+  Input,
+  Button,
+  Col,
+  Row,
+  Select,
+  InputNumber,
+  DatePicker,
+  AutoComplete,
+  Cascader,
+  Tooltip,
+} from "antd";
+import { CopyOutlined } from "@ant-design/icons";
 import "./form_login.css";
+
+const { Option } = Select;
 export default function Form_Register() {
   const [valuesForm, setValuesForm] = useState({
     account: "",
@@ -81,6 +95,18 @@ export default function Form_Register() {
             Mật khẩu
           </label>
         </div>
+        <Input.Group className="w-full my-3">
+          <div className="flex $">
+            <Select defaultValue="Con vật yêu thích">
+              <Option value="Zhejiang">Con vật yêu thích</Option>
+              <Option value="Jiangsu">Jiangsu</Option>
+            </Select>{" "}
+            <Input
+              style={{ width: "50%" }}
+              // defaultValue="Xihu District, Hangzhou"
+            />
+          </div>
+        </Input.Group>
         <div className="flex items-center justify-between">
           <button
             onClick={handleRegister}
@@ -90,6 +116,7 @@ export default function Form_Register() {
             Đăng kí
           </button>
         </div>{" "}
+        <div></div>
       </form>
     </div>
   );
